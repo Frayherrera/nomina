@@ -3,17 +3,7 @@
 @section('titulo', 'Resumen')
 
 @section('contenido')
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Resumen de auditoría</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-
-    <style>
+<style>
         :root {
             --bg: #f8f6f2;
             --card: #ffffff;
@@ -170,7 +160,7 @@
         }
         .metrics dd { margin: 0; font-weight: 500; font-size: 15px; }
 
-        .actions { display: flex; gap: 10px; }
+        .actions { display: flex; flex-wrap: wrap; gap: 10px; }
 
         .alerts { padding: 24px; }
         .alerts ul { list-style: none; margin: 14px 0 20px; padding: 0; }
@@ -213,8 +203,7 @@
             .metrics { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
-</head>
-<body>
+
 @php
     // Formato de pesos colombianos: $ 2.700.000
     $cop = fn ($valor) => '$ ' . number_format((float) $valor, 0, ',', '.');
@@ -345,6 +334,4 @@
     </section>
 
 </main>
-</body>
-</html>
 @endsection
